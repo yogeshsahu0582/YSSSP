@@ -1,0 +1,581 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\usepackage[a4paper, top=1 in, bottom=1 in, left=1 in, right=1 in]{geometry}
+\usepackage{anysize}  
+\usepackage{lmodern}  
+\renewcommand{\normalsize}{\fontsize{16}{18}\selectfont}
+\usepackage{xcolor}  % For defining colors
+\usepackage{hyperref}  % For hyperlinks
+
+\hypersetup{
+    colorlinks=true,
+    urlcolor=blue!50!black  % Dark blue color
+}
+
+
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\author{}
+\date{}
+
+\begin{document}
+\begin{center}
+\textbf{SHRI GOVINDRAM SEKSARIA INSTITUTE OF TECHNOLOGY \& SCIENCE
+INDORE MADHYA PRADESH}
+
+\textbf{A}
+
+\textbf{MAJOR PROJECT REPORT : PHASE-1}
+
+\includegraphics[width=2.03571in,height=1.88856in]{TaxES-Phase(1)/media/image1.jpg}
+
+\begin{quote}
+\hspace{10ex}\textbf{BACHELOR'S OF TECHNOLOGY}
+
+\hspace{26ex}\textbf{IN}
+\end{quote}
+
+\hspace{1ex}\textbf{COMPUTER SCIENCE ENGINEERING}\vspace{2\baselineskip}
+
+\textbf{Project Title -\/- TaxES}
+
+\textbf{Your Names -\/-} Payal Badal (0801CS221107)
+
+\hspace{29ex}Sameeksha Suryawanshi (0801CS221122)
+
+\hspace{18ex}Shivank Rai (0801CS221130)
+
+\hspace{18ex}Stuti Badola (0801CS221139)
+
+\hspace{18ex}Yogesh Sahu (0801CS233D12)
+
+\textbf{Supervisor's Name} -\/- Associate Professor Surendra Gupta
+
+\textbf{Date of Submission} -\/- 25/03/2025
+\vspace{2\baselineskip}
+
+DEPARTMENT OF COMPUTER ENGINEERING SHRI G.S. INSTITUTE OF TECHNOLOGY \&
+SCIENCE INDORE
+
+\textbf{DURATION} : 6th JAN 2025 -- 24th MARCH 2025
+\end{center}
+\newpage
+\textbf{ABSTRACT}
+
+\textbf{Brief Summary of the Project}
+
+\textbf{Key Objectives}
+
+\begin{quote}
+The TaxES project aims to simplify and automate the income tax filing
+process for Indian individuals by leveraging expert systems and natural
+language processing (NLP). The objective is to reduce the complexity of
+tax calculations, minimize manual data entry, and ensure accurate filing
+by extracting key financial details from documents like salary slips and
+bank statements. By integrating NLP, OCR, and AI-based classification,
+the system can identify relevant information, compute taxable income,
+and suggest the correct ITR form for the user.
+
+\textbf{Main Outcomes-}
+
+\textbf{Automatic Data Extraction} -- The system reads and collects
+important financial details from salary slips, bank statements, and
+other documents without needing manual entry.
+
+\textbf{Pre-filled Tax Forms} -- Users get tax forms that are already
+filled with their details, making filing much easier.
+
+\textbf{Smart Tax Calculation} -- The system calculates taxable income
+and deductions automatically, ensuring accuracy.
+
+\textbf{Tax Form Recommendation} -- Based on the user's financial data,
+the system suggests the correct ITR form to use.
+
+\textbf{Simple and User-friendly Process} -- People without tax
+knowledge can easily file their returns with step-by-step guidance.
+\end{quote}
+\vspace{2\baselineskip}
+\textbf{Background and Context}
+
+\begin{quote}
+\textbf{Motivation of the Project :}
+
+The \textbf{TaxES} project aims to simplify income tax filing for Indian
+individuals by automating data extraction and tax calculations. Many
+taxpayers struggle with complex tax laws, selecting the correct ITR
+forms, and manual data entry, leading to errors and delays. To address
+this, \textbf{TaxES} leverages AI, expert systems, NLP, and OCR to
+extract financial details from salary slips and bank statements,
+reducing manual effort and ensuring accuracy.
+
+\textbf{Objective :}
+
+The main objective of this project is to create an intelligent tax
+filing platform that guides users step-by-step, minimizing errors and
+maximizing efficiency. The system will automatically identify relevant
+tax deductions, compute taxable income, and recommend the correct ITR
+form based on individual financial data. Another key objective is to
+enhance compliance by detecting inconsistencies in tax filings and
+suggesting corrective actions before submission.
+
+\textbf{Scope :}
+
+The scope of the project includes designing an AI-powered platform that
+integrates expert systems, NLP models, and OCR technology to automate
+data extraction, tax calculations, and form filling. The platform will
+cater to salaried individuals, freelancers, and small business owners
+who need a hassle-free way to file their taxes. It will provide a secure
+and user-friendly interface where users can upload financial documents,
+get real-time tax calculations, and receive personalized filing
+recommendations. The ultimate goal is to reduce the complexity of tax
+filing, save time for taxpayers, and improve the accuracy of tax
+submissions in India.
+\end{quote}
+
+\textbf{Literature Review}
+
+\begin{quote}
+\textbf{Related Work:}
+\end{quote}
+
+\begin{itemize}
+\item
+  A study explored the role of AI chatbots in income tax prediction in
+  India, highlighting their potential to assist individuals and
+  businesses in navigating complex tax systems.
+  \textbf{\hspace{0pt}\href{https://www.journalpressindia.com/vision-journal-of-indian-taxation/doi/10.17492/jpi.vision.v10i2.1022306?utm_source=chatgpt.com}{Journal
+  Press India}}
+\item
+  Infosys developed an automated tax computation solution that leverages
+  machine learning to extract data from diverse sources, aiming to
+  improve accuracy and efficiency in tax computations.
+  \textbf{\hspace{0pt}\href{https://www.infosys.com/industries/professional-services/offerings/automate-tax-computation.html?utm_source=chatgpt.com}{Navigate
+  your next}}
+\item
+  Research has demonstrated how AI technologies, including large
+  language models (LLMs), NLP, and machine learning, can enhance tax
+  audit reporting by improving efficiency and accuracy in tax compliance
+  processes.
+  \textbf{\hspace{0pt}\href{https://www.researchgate.net/publication/384370895_AI-ASSISTED_TAX_AUTHORITIES_LEVERAGING_LLM_NLP_AND_ML_FOR_EFFICIENT_TAX_AUDIT_REPORTING?utm_source=chatgpt.com}{ResearchGate}}
+\end{itemize}
+
+\begin{quote}
+\vspace{2\baselineskip}
+\textbf{Existing Income Tax e-Filing Solutions:}
+
+\textbf{Income Tax e-Filing Portal}
+\end{quote}
+
+\begin{itemize}
+\item
+  Official government portal for tax filing in India.
+\item
+  Provides access to tax laws, various ITR forms, and an Income Tax
+  Calculator.
+\end{itemize}
+
+\begin{quote}
+\textbf{Vakil Search}
+\end{quote}
+
+\begin{itemize}
+\item
+  Offers expert legal and compliance solutions for tax filing and other
+  financial matters.
+\end{itemize}
+
+\begin{quote}
+\textbf{MyTaxIndia}
+\end{quote}
+
+\begin{itemize}
+\item
+  Focuses on individual tax calculations, helping taxpayers estimate
+  their tax liabilities.
+\end{itemize}
+
+\begin{quote}
+\textbf{ClearTax}
+\end{quote}
+
+\begin{itemize}
+\item
+  Provides tax calculation, return filing, and additional financial
+  services.
+\item
+  Uses automation to simplify tax filing for individuals and businesses.
+\end{itemize}
+
+\begin{quote}
+\vspace{2\baselineskip}
+\textbf{Gaps in Existing Knowledge:}
+
+Despite these advancements, challenges remain in fully automating the
+tax filing process for individuals, particularly in accurately
+extracting and interpreting unstructured financial data from various
+document formats. Additionally, integrating these technologies into a
+seamless, user-friendly platform tailored to the specific requirements
+of Indian taxpayers is an area that requires further research and
+development.
+\end{quote}
+\vspace{2\baselineskip}
+\newpage
+\textbf{Problem Statement :}
+
+\begin{quote}
+\emph{``How might we simplify and automate the process of filing income
+tax returns for Indian individuals by using expert systems and NLP to
+ensure accuracy and reduce complexity?''}
+\end{quote}
+
+\vspace{2\baselineskip}
+\textbf{Methodology for TaxES Project}
+
+\begin{quote}
+\textbf{Detailed Plan of Action}
+\end{quote}
+
+\begin{itemize}
+\item
+  \textbf{Data Collection \& Preprocessing}:
+\end{itemize}
+
+\begin{quote}
+Extract financial details from salary slips, Form 16, and bank
+statements using \textbf{OCR}.
+\end{quote}
+
+\begin{itemize}
+\item
+  \textbf{Natural Language Processing (NLP)}:
+\end{itemize}
+
+\begin{quote}
+Identify relevant tax-related information and classify income sources.
+\end{quote}
+
+\begin{itemize}
+\item
+  \textbf{Expert System Development}:
+\end{itemize}
+
+\begin{quote}
+Automate tax calculations, deductions, and suggest appropriate
+\textbf{ITR forms}.
+\end{quote}
+
+\begin{itemize}
+\item
+  \textbf{Platform Development}:
+\end{itemize}
+
+\begin{quote}
+Build a user-friendly web and mobile interface for seamless interaction.
+\end{quote}
+
+\begin{itemize}
+\item
+  \textbf{Testing \& Validation}:
+\end{itemize}
+
+\begin{quote}
+Conduct accuracy tests on extracted and processed tax data.
+
+\textbf{Experimental or Theoretical Framework}
+\end{quote}
+
+\begin{itemize}
+\item
+  \textbf{OCR for Text Extraction}:
+\end{itemize}
+
+\begin{quote}
+Extracts financial data from scanned documents.
+\end{quote}
+
+\begin{itemize}
+\item
+  \textbf{NLP-based Classification}:
+\end{itemize}
+
+\begin{quote}
+Identifies and categorizes financial terms.
+\end{quote}
+
+\begin{itemize}
+\item
+  \textbf{Expert System Logic}:
+\end{itemize}
+
+\begin{quote}
+Applies Indian tax rules to compute tax liability.
+\end{quote}
+
+\begin{itemize}
+\item
+  \textbf{Machine Learning (ML)}:
+\end{itemize}
+
+\begin{quote}
+Enhances accuracy in tax classification and deductions.
+\end{quote}
+\vspace{2\baselineskip}
+\textbf{Tools and Technologies for TaxES AI}
+
+\begin{quote}
+\textbf{Artificial Intelligence \& Machine Learning}
+\end{quote}
+
+\begin{itemize}
+\item
+  \textbf{OCR (Optical Character Recognition)}:
+\end{itemize}
+
+\begin{quote}
+Tesseract OCR, Google Vision API.
+\end{quote}
+
+\begin{itemize}
+\item
+  \textbf{Natural Language Processing (NLP)}:
+\end{itemize}
+
+\begin{quote}
+spaCy, BERT, OpenAI GPT, Hugging Face Transformers.
+\end{quote}
+
+\begin{itemize}
+\item
+  \textbf{Machine Learning Models}:
+\end{itemize}
+
+\begin{quote}
+Scikit-learn, TensorFlow, PyTorch.
+\end{quote}
+
+\begin{itemize}
+\item
+  \textbf{Expert System Development}:
+\end{itemize}
+
+\begin{quote}
+Rule-based AI using Drools or Prolog.
+\end{quote}
+
+\textbf{Application Development}
+
+\begin{itemize}
+\item
+  \textbf{Backend}: Django, FastAPI for high-performance API handling.
+\item
+  \textbf{Frontend}: React Native for mobile, Next.js for web UI.
+\item
+  \textbf{Database}: PostgreSQL or MySQL for structured tax data
+  storage.
+\item
+  \textbf{Authentication}: OAuth 2.0, JWT for secure access.
+\end{itemize}
+
+\textbf{Cloud \& Deployment}
+
+\begin{itemize}
+\item
+  \textbf{Hosting}: AWS, Google Cloud, Play Store or Azure for scalable
+  deployment.
+\item
+  \textbf{Containerization}: Docker, Kubernetes for microservices
+  architecture.
+\item
+  \textbf{CI/CD Pipeline}: GitHub Actions, Jenkins for automated
+  deployment.
+\end{itemize}
+
+\textbf{APIs \& Integrations}
+
+\begin{itemize}
+\item
+  \textbf{Income Tax Department API}: For tax validation and compliance.
+\item
+  \textbf{Banking \& Financial APIs}: For direct financial data
+  retrieval.
+\item
+  \textbf{AI-based Document Processing}: Google Document AI for form
+  analysis.
+\end{itemize}
+
+\textbf{Testing \& Security}
+
+\begin{itemize}
+\item
+  \textbf{Unit \& Integration Testing}: PyTest, Jest for reliable
+  application testing.
+\item
+  \textbf{Security Tools}: OWASP ZAP, SonarQube for vulnerability
+  assessment.
+\end{itemize}
+
+\begin{quote}
+\vspace{2\baselineskip}
+\textbf{Project Timeline}
+
+\includegraphics[width=5.93151in,height=3.25298in]{TaxES-Phase(1)/media/image2.png}
+
+\includegraphics[width=5.93159in,height=3.27679in]{TaxES-Phase(1)/media/image3.png}
+
+\includegraphics[width=5.87292in,height=3.37202in]{TaxES-Phase(1)/media/image4.png}
+
+\includegraphics[width=5.92103in,height=3.78611in]{TaxES-Phase(1)/media/image5.png}
+
+\includegraphics[width=5.86908in,height=3.76488in]{TaxES-Phase(1)/media/image6.png}
+
+\includegraphics[width=6.07446in,height=1.88393in]{TaxES-Phase(1)/media/image7.png}
+\end{quote}
+\vspace{2\baselineskip}
+\textbf{Resources Required}
+
+\begin{quote}
+\textbf{Software \& Datasets}
+\end{quote}
+
+\begin{itemize}
+\item
+  \textbf{Programming Languages}: Python, JavaScript for AI model
+  development and application interface.
+\item
+  \textbf{Machine Learning Frameworks}: TensorFlow, PyTorch for training
+  and deploying AI models.
+\item
+  \textbf{NLP Libraries}: spaCy, BERT, OpenAI GPT for processing
+  financial documents.
+\item
+  \textbf{OCR Tools}: Tesseract OCR, Google Vision API for extracting
+  text from documents.
+\item
+  \textbf{Databases}: PostgreSQL, Firebase for storing tax-related data.
+\item
+  \textbf{Cloud Services}: AWS, Google Cloud, or Azure for hosting AI
+  models and application backend.
+\item
+  \textbf{APIs}: Income Tax Department API, Banking APIs for real-time
+  data access.
+\item
+  \textbf{Testing Tools}: Selenium, PyTest for ensuring software
+  quality.
+\end{itemize}
+
+\begin{quote}
+\textbf{Hardware Requirements}
+\end{quote}
+
+\begin{itemize}
+\item
+  \textbf{High-performance servers} for AI model training and
+  deployment.
+\item
+  \textbf{GPUs (Graphics Processing Units)} for deep learning model
+  acceleration.
+\item
+  \textbf{Secure cloud storage} for handling user tax-related documents
+  safely.
+\end{itemize}
+\newpage
+\textbf{Reference}
+
+\begin{quote}
+\textbf{Income Tax e-Filing Portal}: The official government platform
+that provides access to tax laws, various forms, and features an Income
+Tax Calculator. \hspace{0pt}
+
+\url{https://www.incometax.gov.in/iec/foportal/}
+\vspace{2\baselineskip}
+
+\textbf{Vakil Search}: Offers expert legal and compliance solutions,
+assisting individuals and businesses with their tax filing needs.
+\hspace{0pt}
+\end{quote}
+
+\hspace{4ex}\url{https://vakilsearch.com/}
+\vspace{2\baselineskip}
+
+\begin{quote}
+\textbf{MyTaxIndia}: Provides tax calculation services tailored for
+individuals, simplifying the process of determining tax
+liabilities.\hspace{0pt}
+
+\url{https://mytaxindia.com/}
+\vspace{2\baselineskip}
+
+\textbf{ClearTax}: Offers comprehensive services including tax
+calculation, return filing, and additional financial services to
+streamline the tax filing process.
+
+\url{https://cleartax.in/}
+\vspace{2\baselineskip}
+
+\url{https://www.researchgate.net/publication/389144454_AI-Driven_Tax_Technology_in_the_United_States_A_Business_Analytics_Framework_for_Compliance_and_Efficiency}
+
+\vspace{2\baselineskip}
+
+\url{https://tax.thomsonreuters.com/blog/the-impact-of-artificial-intelligence-on-the-tax-and-accounting-profession/}
+\end{quote}
+
+\end{document}
